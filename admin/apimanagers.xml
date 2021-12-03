@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" method="upgrade">
+	<name>com_apimanagers</name>
+	<author>Joomla! Project</author>
+	<creationDate>April 2006</creationDate>
+	<copyright>(C) 2006 Open Source Matters, Inc.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>admin@joomla.org</authorEmail>
+	<authorUrl>www.joomla.org</authorUrl>
+	<version>4.0.0</version>
+	<description>COM_APIMANAGERS_XML_DESCRIPTION</description>
+	<namespace path="src">Joomla\Component\Apimanagers</namespace>
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<administration>
+		<menu img="class:apimanagers" link="option=com_apimanagers&amp;view=dashboard">com_apimanagers</menu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>apimanagers.xml</filename>
+			<folder>css</folder>
+			<folder>forms</folder>
+			<folder>helpers</folder>
+			<folder>js</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/com_apimanagers.ini</language>
+			<language tag="en-GB">language/en-GB/com_apimanagers.sys.ini</language>
+		</languages>
+	</administration>
+    <api>
+        <files folder="api">
+			<folder>src</folder>
+		</files>  
+    </api>
+<dashboards>
+		<dashboard title="COM_EXAMPLE_DASHBOARD_TITLE" icon="icon-lock">example</dashboard>
+	</dashboards>   
+</extension>
